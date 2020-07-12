@@ -17,6 +17,7 @@ function Home() {
         <input type="text" value={text} onChange={onChange} />
         <button>Add</button>
       </form>
+      <ul></ul>
     </>
   );
 }
