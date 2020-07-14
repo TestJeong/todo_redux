@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { actionCreators } from "../store";
+import ToDo from "../components/ToDo";
 
 function Home({ toDos, addToDo }) {
   const [reacttext, setText] = useState("");
@@ -10,9 +11,8 @@ function Home({ toDos, addToDo }) {
 
   function onSubmit(e) {
     e.preventDefault();
-    addToDo(reacttext);
+    addToDo(reacttext); // mapDisPatchToProps 의 addToDo prop가 실행된다.
     setText("");
-    console.log(addToDo);
   }
   return (
     <>
@@ -21,7 +21,11 @@ function Home({ toDos, addToDo }) {
         <input type="text" value={reacttext} onChange={onChange} />
         <button>Add</button>
       </form>
-      <ul>{JSON.stringify(toDos)}</ul>
+      <ul>
+        {toDos.map((toDo) => (
+          <ToDo {...toDo} key={toDo.id} />
+        ))}
+      </ul>
     </>
   );
 }
