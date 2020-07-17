@@ -4,6 +4,7 @@ import { actionCreators } from "../store";
 import ToDo from "../components/ToDo";
 
 function Home({ toDos, addToDo }) {
+  console.log({ addToDo });
   const [reacttext, setText] = useState("");
   function onChange(e) {
     setText(e.target.value);
@@ -22,7 +23,9 @@ function Home({ toDos, addToDo }) {
         <button>Add</button>
       </form>
       <ul>
-        {toDos.map((toDo) => (
+        {toDos.map((
+          toDo // toDo는 toDos의 배열 하나하나의 정보
+        ) => (
           <ToDo {...toDo} key={toDo.id} />
         ))}
       </ul>
