@@ -2,11 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 function Detail({ toDo }) {
-  console.log({ toDo });
   return (
     <>
-      <h1>{toDo.text}</h1>
-      <h5>Create at: {toDo.id}</h5>
+      <h1>{toDo?.text}</h1>
+      <h5>Create at: {toDo?.id}</h5>
     </>
   );
 }
