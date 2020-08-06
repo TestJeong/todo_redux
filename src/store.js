@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 import { createAction, createReducer, configureStore } from "@reduxjs/toolkit";
 
 ///////////////////////////////////////////////////////////
@@ -37,6 +36,10 @@ const deleteToDo = (id) => {
       return state;
   }
 }; */
+
+const init = {
+  list: [],
+};
 
 const reducer = createReducer([], {
   [addToDo]: (state, action) => {

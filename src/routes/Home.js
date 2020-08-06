@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { actionCreators } from "../store";
 import ToDo from "../components/ToDo";
 
-function Home({ toDos, addToDo, oneTo }) {
+function Home({ toDos, addToDo }) {
   const [reacttext, setText] = useState("");
   function onChange(e) {
     setText(e.target.value);
